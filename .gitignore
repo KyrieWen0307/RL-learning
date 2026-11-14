@@ -1,0 +1,33 @@
+# Python 缓存与编译产物
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# Jupyter Notebook 检查点
+.ipynb_checkpoints/
+
+# PyTorch 模型权重与 RL 训练日志/录屏（避免大文件撑爆仓库）
+*.pt
+*.pth
+*.ckpt
+*.onnx
+runs/
+logs/
+wandb/
+videos/
+*.mp4
+*.avi
+
+# 编辑器与系统临时文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
