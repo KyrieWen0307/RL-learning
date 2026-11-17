@@ -60,12 +60,17 @@
 
 ## 📈 下半场训练曲线：连续 `Pendulum-v1`（2000 Episodes）
 
-### 1. 调优后（`v2`）每局得分与平滑趋势（`episode_score`）
+### 1. 调优前（`v1`）每局得分与平滑趋势（`episode_score`）
+> 单局 200 步即更新 10 轮且共享 `fc1` 输出 `std`，第 350~1999 轮均值仅 **`-477.80`**，原始轨迹频繁回落至 `-1000 ~ -1300` 区间剧烈震荡。
+
+![Pendulum v1 Episode Score](./pendulum_v1_episode_score.png)
+
+### 2. 调优后（`v2`）每局得分与平滑趋势（`episode_score`）
 > 从开局 `-1329.06` 快速甩摆爬升，第 **250** 轮均值已达 **`-227.46`**；第 **350~1999** 轮全程平均得分 **`-189.65`**，确定性验收两局分别为 **`-139.58`** 和 **`-253.43`**（对应从上方/正下方随机起始角甩起立稳的理论近最优区间）。
 
-![Pendulum Episode Score](./pendulum_episode_score.png)
+![Pendulum v2 Episode Score](./pendulum_episode_score.png)
 
-### 2. 消融对比：`v1`（单局 200 步 + 共享 `fc_std`）vs `v2`（10 局 Batch + `DataLoader` + 解耦 `log_std`）
+### 3. 消融对比：`v1`（单局 200 步 + 共享 `fc_std`）vs `v2`（10 局 Batch + `DataLoader` + 解耦 `log_std`）
 
 | 版本与工程配置 | 收敛至 `-230` 以内轮次 | 50 局滑动均分峰值 | 第 350~1999 局平均分 | 末尾 50 局均分（ep 1950） | 稳定性表现 |
 | :--- | :---: | :---: | :---: | :---: | :--- |
