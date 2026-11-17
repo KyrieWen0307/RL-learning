@@ -44,5 +44,5 @@
 - [x] `01_mdp_and_gym`：MDP 核心概念、贝尔曼方程与 Gymnasium 接口实操
 - [x] `02_policy_gradient`：策略梯度（REINFORCE）原理与手写实现
 - [x] `03_actor_critic`：Actor-Critic 双网架构与优势函数手写实现
-- [ ] `04_ppo`：GAE 广义优势估计与 PPO-Clip 完整手写实现（衔接 CS123 四足狗）
+- [x] `04_ppo`：GAE 广义优势估计与 PPO-Clip 完整手写实现（衔接 CS123 四足狗）
 - [ ] `05_ddpg_branch`：Off-policy 支线、ReplayBuffer 与 DDPG 核心实现
